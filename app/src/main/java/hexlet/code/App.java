@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.EvenGame;
+
 import java.util.Scanner;
 
 class App {
@@ -21,8 +23,7 @@ class App {
                 Cli.greeting();
                 break;
             case "2":
-                Cli.greeting();
-                EvenGame.runGame();
+                Engine.runGame(new EvenGame());
                 break;
             case "0":
                 System.out.println("See you again! Exit application");
