@@ -4,10 +4,10 @@ import hexlet.code.MindGame;
 
 import java.util.Random;
 
-public class GCDGame implements MindGame {
-    String question;
-    String answer;
-    Random random;
+public final class GCDGame implements MindGame {
+    private String question;
+    private String answer;
+    private Random random;
 
     public GCDGame() {
         random = new Random();
@@ -17,8 +17,9 @@ public class GCDGame implements MindGame {
     }
 
     public void nextQuestion() {
-        int number1 = random.nextInt(100);
-        int number2 = random.nextInt(100);
+        int numberBound = 100;
+        int number1 = random.nextInt(numberBound);
+        int number2 = random.nextInt(numberBound);
         question = number1 + " " + number2;
         int answerNumber = number1 > number2 ? getGCD(number1, number2) : getGCD(number2, number1);
         answer = Integer.valueOf(answerNumber).toString();

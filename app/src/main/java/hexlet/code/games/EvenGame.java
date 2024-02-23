@@ -4,10 +4,10 @@ import hexlet.code.MindGame;
 
 import java.util.Random;
 
-public class EvenGame implements MindGame {
-    String question;
-    String answer;
-    Random random;
+public final class EvenGame implements MindGame {
+    private String question;
+    private String answer;
+    private Random random;
 
     public EvenGame() {
         random = new Random();

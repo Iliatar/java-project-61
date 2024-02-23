@@ -4,10 +4,10 @@ import hexlet.code.MindGame;
 
 import java.util.Random;
 
-public class ProgressionGame  implements MindGame {
-    String question;
-    String answer;
-    Random random;
+public final class ProgressionGame  implements MindGame {
+    private String question;
+    private String answer;
+    private Random random;
 
     public ProgressionGame() {
         random = new Random();
@@ -18,9 +18,13 @@ public class ProgressionGame  implements MindGame {
     }
 
     public void nextQuestion() {
-        int b = random.nextInt(50);
-        int k = random.nextInt(15) + 1;
-        int length = 5 + random.nextInt(7);
+        int bBound = 50;
+        int kBound = 15;
+        int minimalLenght = 5;
+        int maximalLenght = 12;
+        int b = random.nextInt(bBound);
+        int k = random.nextInt(kBound) + 1;
+        int length = minimalLenght + random.nextInt(maximalLenght - minimalLenght);
         int questNumberIndex = random.nextInt(length);
 
         StringBuilder builder = new StringBuilder();

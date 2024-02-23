@@ -4,10 +4,10 @@ import hexlet.code.MindGame;
 
 import java.util.Random;
 
-public class CalcGame implements MindGame {
-    String question;
-    String answer;
-    Random random;
+public final class CalcGame implements MindGame {
+    private String question;
+    private String answer;
+    private Random random;
 
     public CalcGame() {
         random = new Random();
@@ -17,9 +17,11 @@ public class CalcGame implements MindGame {
     }
 
     public void nextQuestion() {
-        int operand1 = random.nextInt(25);
-        int operand2 = random.nextInt(25);
-        int operator = random.nextInt(3);
+        int operatorBound = 25;
+        int operandBound = 3;
+        int operand1 = random.nextInt(operatorBound);
+        int operand2 = random.nextInt(operatorBound);
+        int operator = random.nextInt(operandBound);
 
         switch (operator) {
             case 0:

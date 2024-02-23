@@ -4,10 +4,10 @@ import hexlet.code.MindGame;
 
 import java.util.Random;
 
-public class PrimeGame implements MindGame {
-    String question;
-    String answer;
-    Random random;
+public final class PrimeGame implements MindGame {
+    private String question;
+    private String answer;
+    private Random random;
 
     public PrimeGame() {
         random = new Random();
@@ -17,7 +17,8 @@ public class PrimeGame implements MindGame {
     }
 
     public void nextQuestion() {
-        int number = random.nextInt(100) + 1;
+        int numberBound = 100;
+        int number = random.nextInt(numberBound) + 1;
         question = Integer.valueOf(number).toString();
         answer = "yes";
 
