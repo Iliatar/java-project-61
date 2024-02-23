@@ -5,6 +5,7 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class EvenGame implements MindGame {
+    private final static int NUMBER_BOUND = 100;
     private String question;
     private String answer;
     private Random random;
@@ -18,7 +19,7 @@ public final class EvenGame implements MindGame {
     }
 
     public void nextQuestion() {
-        Integer number = random.nextInt(100);
+        Integer number = random.nextInt(NUMBER_BOUND);
         question = number.toString();
         answer = number % 2 == 0 ? "yes" : "no";
     }

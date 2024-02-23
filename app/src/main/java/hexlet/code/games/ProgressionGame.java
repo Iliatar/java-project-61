@@ -5,6 +5,10 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class ProgressionGame  implements MindGame {
+    private final static int B_BOUND = 50;
+    private final static int K_BOUND = 15;
+    private final static int MIN_LENGTH = 5;
+    private final static int MAX_LENGTH = 12;
     private String question;
     private String answer;
     private Random random;
@@ -18,13 +22,9 @@ public final class ProgressionGame  implements MindGame {
     }
 
     public void nextQuestion() {
-        int bBound = 50;
-        int kBound = 15;
-        int minimalLenght = 5;
-        int maximalLenght = 12;
-        int b = random.nextInt(bBound);
-        int k = random.nextInt(kBound) + 1;
-        int length = minimalLenght + random.nextInt(maximalLenght - minimalLenght);
+        int b = random.nextInt(B_BOUND);
+        int k = random.nextInt(K_BOUND) + 1;
+        int length = MIN_LENGTH + random.nextInt(MAX_LENGTH - MIN_LENGTH);
         int questNumberIndex = random.nextInt(length);
 
         StringBuilder builder = new StringBuilder();

@@ -5,6 +5,7 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class GCDGame implements MindGame {
+    private final static int NUMBER_BOUND = 100;
     private String question;
     private String answer;
     private Random random;
@@ -17,9 +18,8 @@ public final class GCDGame implements MindGame {
     }
 
     public void nextQuestion() {
-        int numberBound = 100;
-        int number1 = random.nextInt(numberBound);
-        int number2 = random.nextInt(numberBound);
+        int number1 = random.nextInt(NUMBER_BOUND);
+        int number2 = random.nextInt(NUMBER_BOUND);
         question = number1 + " " + number2;
         int answerNumber = number1 > number2 ? getGCD(number1, number2) : getGCD(number2, number1);
         answer = Integer.valueOf(answerNumber).toString();

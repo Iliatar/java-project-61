@@ -5,6 +5,8 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class CalcGame implements MindGame {
+    private static final int OPERATOR_BOUND = 25;
+    private static final int OPERAND_BOUND = 3;
     private String question;
     private String answer;
     private Random random;
@@ -17,11 +19,9 @@ public final class CalcGame implements MindGame {
     }
 
     public void nextQuestion() {
-        int operatorBound = 25;
-        int operandBound = 3;
-        int operand1 = random.nextInt(operatorBound);
-        int operand2 = random.nextInt(operatorBound);
-        int operator = random.nextInt(operandBound);
+        int operand1 = random.nextInt(OPERATOR_BOUND);
+        int operand2 = random.nextInt(OPERATOR_BOUND);
+        int operator = random.nextInt(OPERAND_BOUND);
 
         switch (operator) {
             case 0:
