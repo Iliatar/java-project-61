@@ -13,7 +13,7 @@ public class PrimeGame implements MindGame {
         random = new Random();
     }
     public String getIntro() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     public void nextQuestion() {
