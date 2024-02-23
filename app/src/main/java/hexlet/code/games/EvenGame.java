@@ -5,7 +5,7 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class EvenGame implements MindGame {
-    private final static int NUMBER_BOUND = 100;
+    private static final int NUMBER_BOUND = 100;
     private String question;
     private String answer;
     private Random random;

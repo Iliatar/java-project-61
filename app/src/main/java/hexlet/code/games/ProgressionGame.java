@@ -5,10 +5,10 @@ import hexlet.code.MindGame;
 import java.util.Random;
 
 public final class ProgressionGame  implements MindGame {
-    private final static int B_BOUND = 50;
-    private final static int K_BOUND = 15;
-    private final static int MIN_LENGTH = 5;
-    private final static int MAX_LENGTH = 12;
+    private static final int K_BOUND = 15;
+    private static final int B_BOUND = 50;
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 12;
     private String question;
     private String answer;
     private Random random;
