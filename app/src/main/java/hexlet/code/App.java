@@ -1,13 +1,11 @@
 package hexlet.code;
 
-//import hexlet.code.games.EvenGame;
-//import hexlet.code.games.ProgressionGame;
-//import hexlet.code.games.GCDGame;
-import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCDGame;
 import hexlet.code.games.ProgressionGame;
-//import hexlet.code.games.PrimeGame;
+import hexlet.code.games.GCDGame;
+//import hexlet.code.games.*;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.CalcGame;
 
 import java.util.Scanner;
 
@@ -46,9 +44,9 @@ class App {
             case "5":
                 ProgressionGame.runGame(ATTEMPS_COUNT);
                 break;
-            /*case "6":
-                Engine.runGame(new PrimeGame());
-                break;*/
+            case "6":
+                PrimeGame.runGame(ATTEMPS_COUNT);
+                break;
             case "0":
                 System.out.println("See you again! Exit application");
                 break;

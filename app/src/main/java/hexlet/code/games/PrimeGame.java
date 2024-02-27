@@ -1,40 +1,34 @@
 package hexlet.code.games;
 
-import hexlet.code.MindGame;
+import hexlet.code.Engine;
 
 import java.util.Random;
 
-public final class PrimeGame implements MindGame {
+public final class PrimeGame {
     private static final int NUMBER_BOUND = 100;
-    private String question;
-    private String answer;
-    private Random random;
 
-    public PrimeGame() {
-        random = new Random();
-    }
     public String getIntro() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public void nextQuestion() {
-        int number = random.nextInt(NUMBER_BOUND) + 1;
-        question = Integer.valueOf(number).toString();
-        answer = "yes";
+    public static void runGame(int attempsCount) {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Random random = new Random();
+        String[] questions = new String[attempsCount];
+        String[] answers = new String[attempsCount];
 
-        for (int i = 2; i <= number / 2; i++) {
-            if (number % i == 0) {
-                answer = "no";
-                break;
+        for (int i = 0; i < attempsCount; i++) {
+            int number = random.nextInt(NUMBER_BOUND) + 1;
+            questions[i] = Integer.valueOf(number).toString();
+            answers[i] = "yes";
+
+            for (int j = 2; j <= number / 2; j++) {
+                if (number % j == 0) {
+                    answers[i] = "no";
+                    break;
+                }
             }
         }
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
+        Engine.runGame(questions, answers);
     }
 }
