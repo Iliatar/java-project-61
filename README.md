@@ -1,5 +1,9 @@
+###Student project, that contains 5 console logical games;
+###I'm gonna develop it to cybersport discipline :)))
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Iliatar/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Iliatar/java-project-61/actions)
+### Asciinema links:
 https://asciinema.org/a/uk3gL5iyBYwiq4MDWFiJ5LPz2
 https://asciinema.org/a/imtWe5eOiZvXM4yJt1VtSUkMZ
 https://asciinema.org/a/WxHoVUHEt5l1t1xooOA2ghGc7
