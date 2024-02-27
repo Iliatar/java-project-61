@@ -4,6 +4,7 @@ package hexlet.code;
 //import hexlet.code.games.ProgressionGame;
 //import hexlet.code.games.GCDGame;
 import hexlet.code.games.CalcGame;
+import hexlet.code.games.EvenGame;
 //import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
@@ -27,15 +28,14 @@ class App {
         Scanner scanner = new Scanner(System.in);
         String userChoice = scanner.nextLine();
 
+        Cli.greeting();
         switch (userChoice) {
             case "1":
-                Cli.greeting();
                 break;
-            /*case "2":
-                Engine.runGame(new EvenGame());
-                break;*/
+            case "2":
+                EvenGame.runGame(ATTEMPS_COUNT);
+                break;
             case "3":
-                Cli.greeting();
                 CalcGame.runGame(ATTEMPS_COUNT);
                 break;
             /*case "4":
