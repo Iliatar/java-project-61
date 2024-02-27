@@ -28,23 +28,28 @@ class App {
         Scanner scanner = new Scanner(System.in);
         String userChoice = scanner.nextLine();
 
-        Cli.greeting();
         switch (userChoice) {
             case "1":
+                Cli.greeting();
                 break;
             case "2":
+                Cli.greeting();
                 EvenGame.runGame(ATTEMPS_COUNT);
                 break;
             case "3":
+                Cli.greeting();
                 CalcGame.runGame(ATTEMPS_COUNT);
                 break;
             case "4":
+                Cli.greeting();
                 GCDGame.runGame(ATTEMPS_COUNT);
                 break;
             case "5":
+                Cli.greeting();
                 ProgressionGame.runGame(ATTEMPS_COUNT);
                 break;
             case "6":
+                Cli.greeting();
                 PrimeGame.runGame(ATTEMPS_COUNT);
                 break;
             case "0":
