@@ -1,57 +1,46 @@
 package hexlet.code.games;
 
-import hexlet.code.MindGame;
+import hexlet.code.Engine;
 
 import java.util.Random;
 
-public final class ProgressionGame  implements MindGame {
+public final class ProgressionGame {
     private static final int K_BOUND = 15;
     private static final int B_BOUND = 50;
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 12;
-    private String question;
-    private String answer;
-    private Random random;
 
-    public ProgressionGame() {
-        random = new Random();
-    }
+    public static void runGame(int attempsCount) {
+        System.out.println("What number is missing in the progression?");
+        Random random = new Random();
+        String[] questions = new String[attempsCount];
+        String[] answers = new String[attempsCount];
 
-    public String getIntro() {
-        return "What number is missing in the progression?";
-    }
+        for (int i = 0; i < attempsCount; i++) {
+            int b = random.nextInt(B_BOUND);
+            int k = random.nextInt(K_BOUND) + 1;
+            int length = MIN_LENGTH + random.nextInt(MAX_LENGTH - MIN_LENGTH);
+            int questNumberIndex = random.nextInt(length);
 
-    public void nextQuestion() {
-        int b = random.nextInt(B_BOUND);
-        int k = random.nextInt(K_BOUND) + 1;
-        int length = MIN_LENGTH + random.nextInt(MAX_LENGTH - MIN_LENGTH);
-        int questNumberIndex = random.nextInt(length);
+            StringBuilder builder = new StringBuilder();
 
-        StringBuilder builder = new StringBuilder();
+            for (int j = 0; j < length; j++) {
+                int number = k * j + b;
 
-        for (int i = 0; i < length; i++) {
-            int number = k * i + b;
+                if (j > 0) {
+                    builder.append(" ");
+                }
 
-            if (i > 0) {
-                builder.append(" ");
+                if (j == questNumberIndex) {
+                    builder.append("..");
+                    answers[i] = Integer.valueOf(number).toString();
+                } else {
+                    builder.append(number);
+                }
             }
 
-            if (i == questNumberIndex) {
-                builder.append("..");
-                answer = Integer.valueOf(number).toString();
-            } else {
-                builder.append(number);
-            }
+            questions[i] = builder.toString();
         }
-
-        question = builder.toString();
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
+        Engine.runGame(questions, answers);
     }
 }
