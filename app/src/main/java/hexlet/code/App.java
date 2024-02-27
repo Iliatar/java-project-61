@@ -5,6 +5,7 @@ package hexlet.code;
 //import hexlet.code.games.GCDGame;
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCDGame;
 //import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
@@ -38,10 +39,10 @@ class App {
             case "3":
                 CalcGame.runGame(ATTEMPS_COUNT);
                 break;
-            /*case "4":
-                Engine.runGame(new GCDGame());
+            case "4":
+                GCDGame.runGame(ATTEMPS_COUNT);
                 break;
-            case "5":
+            /*case "5":
                 Engine.runGame(new ProgressionGame());
                 break;
             case "6":
