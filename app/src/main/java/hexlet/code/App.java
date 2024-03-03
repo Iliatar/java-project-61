@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 class App {
     private static final int ATTEMPS_COUNT = 3;
+    private static String userName;
     public static void main(String[] args) {
         showMenu();
     }
@@ -30,26 +31,21 @@ class App {
 
         switch (userChoice) {
             case "1":
-                Cli.greeting();
+                greeting();
                 break;
             case "2":
-                Cli.greeting();
                 EvenGame.runGame(ATTEMPS_COUNT);
                 break;
             case "3":
-                Cli.greeting();
                 CalcGame.runGame(ATTEMPS_COUNT);
                 break;
             case "4":
-                Cli.greeting();
                 GCDGame.runGame(ATTEMPS_COUNT);
                 break;
             case "5":
-                Cli.greeting();
                 ProgressionGame.runGame(ATTEMPS_COUNT);
                 break;
             case "6":
-                Cli.greeting();
                 PrimeGame.runGame(ATTEMPS_COUNT);
                 break;
             case "0":
@@ -59,5 +55,20 @@ class App {
                 System.out.println("Unknown command. Exit application");
                 break;
         }
+    }
+
+    public static void greeting() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+
+        //scanner.close();
+    }
+
+    public static String getUserName() {
+        return  userName;
     }
 }

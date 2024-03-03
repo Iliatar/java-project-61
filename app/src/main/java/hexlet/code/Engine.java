@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static void runGame(String[] questions, String[] answers) {
         int i = 0;
+        App.greeting();
         for (; i < questions.length; i++) {
             System.out.println("Question: " + questions[i]);
             System.out.print("Your answer: ");
@@ -20,9 +21,9 @@ public class Engine {
         }
 
         if (i == questions.length) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            System.out.println("Congratulations, " + App.getUserName() + "!");
         } else {
-            System.out.println("Let's try again, " + Cli.getUserName() + "!");
+            System.out.println("Let's try again, " + App.getUserName() + "!");
         }
     }
 }
