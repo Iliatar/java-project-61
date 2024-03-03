@@ -9,7 +9,8 @@ public final class GCDGame {
 
     private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
-    public static void runGame(int attempsCount) {
+    public static void runGame() {
+        int attempsCount = Engine.getRoundCount();
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];

@@ -9,7 +9,8 @@ public final class PrimeGame {
 
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void runGame(int attempsCount) {
+    public static void runGame() {
+        int attempsCount = Engine.getRoundCount();
         System.out.println();
         Random random = new Random();
         String[] questions = new String[attempsCount];

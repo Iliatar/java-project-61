@@ -10,7 +10,8 @@ public final class CalcGame {
 
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
-    public static void runGame(int attempsCount) {
+    public static void runGame() {
+        int attempsCount = Engine.getRoundCount();
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];

@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    private static final int ROUND_COUNT = 3;
     public static void runGame(String[][] questions, String description) {
         int i = 0;
         App.greeting();
@@ -21,10 +22,14 @@ public class Engine {
             }
         }
 
-        if (i == questions.length) {
+        if (i == questions[0].length) {
             System.out.println("Congratulations, " + App.getUserName() + "!");
         } else {
             System.out.println("Let's try again, " + App.getUserName() + "!");
         }
+    }
+
+    public static int getRoundCount() {
+        return ROUND_COUNT;
     }
 }

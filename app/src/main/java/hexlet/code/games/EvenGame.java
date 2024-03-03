@@ -7,9 +7,10 @@ import java.util.Random;
 public final class EvenGame {
     private static final int NUMBER_BOUND = 100;
 
-    private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static void runGame(int attempsCount) {
+    public static void runGame() {
+        int attempsCount = Engine.getRoundCount();
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];

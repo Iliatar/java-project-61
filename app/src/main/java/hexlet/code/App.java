@@ -10,7 +10,6 @@ import hexlet.code.games.CalcGame;
 import java.util.Scanner;
 
 class App {
-    private static final int ATTEMPS_COUNT = 3;
     private static String userName;
     public static void main(String[] args) {
         showMenu();
@@ -34,19 +33,19 @@ class App {
                 greeting();
                 break;
             case "2":
-                EvenGame.runGame(ATTEMPS_COUNT);
+                EvenGame.runGame();
                 break;
             case "3":
-                CalcGame.runGame(ATTEMPS_COUNT);
+                CalcGame.runGame();
                 break;
             case "4":
-                GCDGame.runGame(ATTEMPS_COUNT);
+                GCDGame.runGame();
                 break;
             case "5":
-                ProgressionGame.runGame(ATTEMPS_COUNT);
+                ProgressionGame.runGame();
                 break;
             case "6":
-                PrimeGame.runGame(ATTEMPS_COUNT);
+                PrimeGame.runGame();
                 break;
             case "0":
                 System.out.println("See you again! Exit application");
