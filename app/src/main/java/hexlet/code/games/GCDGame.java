@@ -10,12 +10,12 @@ public final class GCDGame {
     private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void runGame() {
-        int attempsCount = Engine.getRoundCount();
+        int roundCount = Engine.getRoundCount();
         Random random = new Random();
-        String[] questions = new String[attempsCount];
-        String[] answers = new String[attempsCount];
+        String[] questions = new String[roundCount];
+        String[] answers = new String[roundCount];
 
-        for (int i = 0; i < attempsCount; i++) {
+        for (int i = 0; i < roundCount; i++) {
             int number1 = random.nextInt(NUMBER_BOUND);
             int number2 = random.nextInt(NUMBER_BOUND);
             questions[i] = number1 + " " + number2;

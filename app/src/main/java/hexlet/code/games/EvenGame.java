@@ -10,12 +10,12 @@ public final class EvenGame {
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
-        int attempsCount = Engine.getRoundCount();
+        int roundCount = Engine.getRoundCount();
         Random random = new Random();
-        String[] questions = new String[attempsCount];
-        String[] answers = new String[attempsCount];
+        String[] questions = new String[roundCount];
+        String[] answers = new String[roundCount];
 
-        for (int i = 0; i < attempsCount; i++) {
+        for (int i = 0; i < roundCount; i++) {
             Integer number = random.nextInt(NUMBER_BOUND);
             questions[i] = number.toString();
             answers[i] = number % 2 == 0 ? "yes" : "no";

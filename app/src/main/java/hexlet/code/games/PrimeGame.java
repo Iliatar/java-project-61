@@ -10,13 +10,13 @@ public final class PrimeGame {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
-        int attempsCount = Engine.getRoundCount();
+        int roundCount = Engine.getRoundCount();
         System.out.println();
         Random random = new Random();
-        String[] questions = new String[attempsCount];
-        String[] answers = new String[attempsCount];
+        String[] questions = new String[roundCount];
+        String[] answers = new String[roundCount];
 
-        for (int i = 0; i < attempsCount; i++) {
+        for (int i = 0; i < roundCount; i++) {
             int number = random.nextInt(NUMBER_BOUND) + 1;
             questions[i] = Integer.valueOf(number).toString();
             answers[i] = checkPrime(number) ? "yes" : "no";
