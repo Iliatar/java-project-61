@@ -24,25 +24,32 @@ public final class ProgressionGame {
             int length = MIN_LENGTH + random.nextInt(MAX_LENGTH - MIN_LENGTH);
             int questNumberIndex = random.nextInt(length);
 
-            StringBuilder builder = new StringBuilder();
+            questions[i] = calcProgression(b, k, length, questNumberIndex);
+            int answerNumber = k * questNumberIndex + b;
+            answers[i] = Integer.valueOf(answerNumber).toString();
 
-            for (int j = 0; j < length; j++) {
-                int number = k * j + b;
 
-                if (j > 0) {
-                    builder.append(" ");
-                }
-
-                if (j == questNumberIndex) {
-                    builder.append("..");
-                    answers[i] = Integer.valueOf(number).toString();
-                } else {
-                    builder.append(number);
-                }
-            }
-
-            questions[i] = builder.toString();
         }
         Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+    }
+
+    private  static String calcProgression(int b, int k, int length, int questNumberIndex) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int j = 0; j < length; j++) {
+            int number = k * j + b;
+
+            if (j > 0) {
+                builder.append(" ");
+            }
+
+            if (j == questNumberIndex) {
+                builder.append("..");
+            } else {
+                builder.append(number);
+            }
+        }
+
+        return builder.toString();
     }
 }
