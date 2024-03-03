@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 public final class ProgressionGame {
     private static final int K_BOUND = 15;
@@ -14,15 +13,14 @@ public final class ProgressionGame {
 
     public static void runGame() {
         int roundCount = Engine.getRoundCount();
-        Random random = new Random();
         String[] questions = new String[roundCount];
         String[] answers = new String[roundCount];
 
         for (int i = 0; i < roundCount; i++) {
-            int b = random.nextInt(B_BOUND);
-            int k = random.nextInt(K_BOUND) + 1;
-            int length = MIN_LENGTH + random.nextInt(MAX_LENGTH - MIN_LENGTH);
-            int questNumberIndex = random.nextInt(length);
+            int b = Utils.generateNumber(B_BOUND);
+            int k = Utils.generateNumber(K_BOUND) + 1;
+            int length = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);
+            int questNumberIndex = Utils.generateNumber(length);
 
             String[] progressionArray = makeProgression(b, k, length);
             answers[i] = progressionArray[questNumberIndex];

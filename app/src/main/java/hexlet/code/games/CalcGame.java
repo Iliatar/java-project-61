@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 public final class CalcGame {
     private static final int OPERATOR_BOUND = 25;
@@ -12,14 +11,13 @@ public final class CalcGame {
 
     public static void runGame() {
         int roundCount = Engine.getRoundCount();
-        Random random = new Random();
         String[] questions = new String[roundCount];
         String[] answers = new String[roundCount];
 
         for (int i = 0; i < roundCount; i++) {
-            int operand1 = random.nextInt(OPERATOR_BOUND);
-            int operand2 = random.nextInt(OPERATOR_BOUND);
-            int operator = random.nextInt(OPERAND_BOUND);
+            int operand1 = Utils.generateNumber(OPERATOR_BOUND);
+            int operand2 = Utils.generateNumber(OPERATOR_BOUND);
+            int operator = Utils.generateNumber(OPERAND_BOUND);
 
             questions[i] = calcQuestion(operator, operand1, operand2);
             answers[i] = calcAnswer(operator, operand1, operand2);
