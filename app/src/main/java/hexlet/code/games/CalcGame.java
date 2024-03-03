@@ -20,23 +20,49 @@ public final class CalcGame {
             int operand2 = random.nextInt(OPERATOR_BOUND);
             int operator = random.nextInt(OPERAND_BOUND);
 
-            switch (operator) {
-                case 0:
-                    questions[i] = operand1 + " + " + operand2;
-                    answers[i] = Integer.valueOf(operand1 + operand2).toString();
-                    break;
-                case 1:
-                    questions[i] = operand1 + " - " + operand2;
-                    answers[i] = Integer.valueOf(operand1 - operand2).toString();
-                    break;
-                case 2:
-                    questions[i] = operand1 + " * " + operand2;
-                    answers[i] = Integer.valueOf(operand1 * operand2).toString();
-                    break;
-                default:
-                    throw new RuntimeException("Unknown input: " + operator);
-            }
+            questions[i] = calcQuestion(operator, operand1, operand2);
+            answers[i] = calcAnswer(operator, operand1, operand2);
         }
         Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+    }
+
+    private static String calcQuestion(int operator, int operand1, int operand2) {
+        String result;
+
+        switch (operator) {
+            case 0:
+                result = operand1 + " + " + operand2;
+                break;
+            case 1:
+                result = operand1 + " - " + operand2;
+                break;
+            case 2:
+                result = operand1 + " * " + operand2;
+                break;
+            default:
+                throw new RuntimeException("Unknown input: " + operator);
+        }
+
+        return  result;
+    }
+
+    private static String calcAnswer(int operator, int operand1, int operand2) {
+        String result;
+
+        switch (operator) {
+            case 0:
+                result = Integer.valueOf(operand1 + operand2).toString();
+                break;
+            case 1:
+                result = Integer.valueOf(operand1 - operand2).toString();
+                break;
+            case 2:
+                result = Integer.valueOf(operand1 * operand2).toString();
+                break;
+            default:
+                throw new RuntimeException("Unknown input: " + operator);
+        }
+
+        return  result;
     }
 }
