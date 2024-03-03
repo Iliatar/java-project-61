@@ -19,15 +19,22 @@ public final class PrimeGame {
         for (int i = 0; i < attempsCount; i++) {
             int number = random.nextInt(NUMBER_BOUND) + 1;
             questions[i] = Integer.valueOf(number).toString();
-            answers[i] = "yes";
+            answers[i] = checkPrime(number) ? "yes" : "no";
+        }
 
-            for (int j = 2; j <= number / 2; j++) {
-                if (number % j == 0) {
-                    answers[i] = "no";
-                    break;
-                }
+        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+    }
+
+    private static boolean checkPrime(int number) {
+        boolean result = true;
+
+        for (int j = 2; j <= number / 2; j++) {
+            if (number % j == 0) {
+                result = false;
+                break;
             }
         }
-        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+
+        return  result;
     }
 }
