@@ -15,9 +15,9 @@ public final class CalcGame {
         String[] answers = new String[roundCount];
 
         for (int i = 0; i < roundCount; i++) {
-            int operand1 = Utils.generateNumber(OPERATOR_BOUND);
-            int operand2 = Utils.generateNumber(OPERATOR_BOUND);
-            int operator = Utils.generateNumber(OPERAND_BOUND);
+            int operand1 = Utils.generateNumber(OPERAND_BOUND);
+            int operand2 = Utils.generateNumber(OPERAND_BOUND);
+            int operator = Utils.generateNumber(OPERATOR_BOUND);
 
             questions[i] = calcQuestion(operator, operand1, operand2);
             answers[i] = calcAnswer(operator, operand1, operand2);
