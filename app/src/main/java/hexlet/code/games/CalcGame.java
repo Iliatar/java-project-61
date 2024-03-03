@@ -7,7 +7,7 @@ public final class CalcGame {
     private static final int OPERATOR_BOUND = 25;
     private static final int OPERAND_BOUND = 3;
 
-    private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void runGame() {
         int roundCount = Engine.getRoundCount();
