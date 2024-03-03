@@ -30,10 +30,11 @@ public final class CalcGame {
                     answers[i] = Integer.valueOf(operand1 - operand2).toString();
                     break;
                 case 2:
-                default:
                     questions[i] = operand1 + " * " + operand2;
                     answers[i] = Integer.valueOf(operand1 * operand2).toString();
                     break;
+                default:
+                    throw new RuntimeException("Unknown input: " + operator);
             }
         }
         Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
