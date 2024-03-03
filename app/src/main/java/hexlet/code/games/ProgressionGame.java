@@ -10,8 +10,9 @@ public final class ProgressionGame {
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 12;
 
+    private static final String DESCRIPTION = "What number is missing in the progression?";
+
     public static void runGame(int attempsCount) {
-        System.out.println("What number is missing in the progression?");
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];
@@ -41,6 +42,6 @@ public final class ProgressionGame {
 
             questions[i] = builder.toString();
         }
-        Engine.runGame(questions, answers);
+        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
     }
 }

@@ -7,12 +7,10 @@ import java.util.Random;
 public final class PrimeGame {
     private static final int NUMBER_BOUND = 100;
 
-    public String getIntro() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame(int attempsCount) {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println();
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];
@@ -29,6 +27,6 @@ public final class PrimeGame {
                 }
             }
         }
-        Engine.runGame(questions, answers);
+        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
     }
 }

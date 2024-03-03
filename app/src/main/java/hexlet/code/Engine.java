@@ -3,19 +3,20 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void runGame(String[] questions, String[] answers) {
+    public static void runGame(String[][] questions, String description) {
         int i = 0;
         App.greeting();
-        for (; i < questions.length; i++) {
-            System.out.println("Question: " + questions[i]);
+        System.out.println(description);
+        for (; i < questions[0].length; i++) {
+            System.out.println("Question: " + questions[0][i]);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
-            if (userAnswer.equals(answers[i])) {
+            if (userAnswer.equals(questions[1][i])) {
                 System.out.println("Correct");
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                    + answers[i] + "'");
+                    + questions[1][i] + "'");
                 break;
             }
         }

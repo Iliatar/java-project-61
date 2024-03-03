@@ -8,8 +8,9 @@ public final class CalcGame {
     private static final int OPERATOR_BOUND = 25;
     private static final int OPERAND_BOUND = 3;
 
+    private static final String DESCRIPTION = "What number is missing in the progression?";
+
     public static void runGame(int attempsCount) {
-        System.out.println("What is the result of the expression?");
         Random random = new Random();
         String[] questions = new String[attempsCount];
         String[] answers = new String[attempsCount];
@@ -35,6 +36,6 @@ public final class CalcGame {
                     break;
             }
         }
-        Engine.runGame(questions, answers);
+        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
     }
 }
