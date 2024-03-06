@@ -12,11 +12,10 @@ public final class ProgressionGame {
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
     public static void runGame() {
-        int roundCount = Engine.getRoundCount();
-        String[] questions = new String[roundCount];
-        String[] answers = new String[roundCount];
+        String[] questions = new String[Engine.ROUND_COUNT];
+        String[] answers = new String[Engine.ROUND_COUNT];
 
-        for (int i = 0; i < roundCount; i++) {
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int b = Utils.generateNumber(B_BOUND);
             int k = Utils.generateNumber(K_BOUND) + 1;
             int length = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);

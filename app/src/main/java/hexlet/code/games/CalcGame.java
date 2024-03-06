@@ -10,11 +10,10 @@ public final class CalcGame {
     private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void runGame() {
-        int roundCount = Engine.getRoundCount();
-        String[] questions = new String[roundCount];
-        String[] answers = new String[roundCount];
+        String[] questions = new String[Engine.ROUND_COUNT];
+        String[] answers = new String[Engine.ROUND_COUNT];
 
-        for (int i = 0; i < roundCount; i++) {
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int operand1 = Utils.generateNumber(OPERAND_BOUND);
             int operand2 = Utils.generateNumber(OPERAND_BOUND);
             int operator = Utils.generateNumber(OPERATOR_BOUND);

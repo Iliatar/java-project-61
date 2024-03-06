@@ -10,7 +10,6 @@ import hexlet.code.games.CalcGame;
 import java.util.Scanner;
 
 class App {
-    private static String userName;
     public static void main(String[] args) {
         showMenu();
     }
@@ -51,7 +50,7 @@ class App {
                 System.out.println("See you again! Exit application");
                 break;
             default:
-                System.out.println("Unknown command. Exit application");
+                System.out.println("Unknown command: " + userChoice + ". Exit application");
                 break;
         }
     }
@@ -61,13 +60,9 @@ class App {
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        userName = scanner.next();
+        String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
 
         //scanner.close();
-    }
-
-    public static String getUserName() {
-        return  userName;
     }
 }
