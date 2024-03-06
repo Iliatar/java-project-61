@@ -22,6 +22,10 @@ public final class PrimeGame {
     }
 
     private static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+
         boolean result = true;
 
         for (int j = 2; j <= number / 2; j++) {
@@ -31,6 +35,6 @@ public final class PrimeGame {
             }
         }
 
-        return  result;
+        return result;
     }
 }
