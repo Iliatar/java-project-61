@@ -10,19 +10,18 @@ public final class CalcGame {
     private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void runGame() {
-        String[] questions = new String[Engine.ROUND_COUNT];
-        String[] answers = new String[Engine.ROUND_COUNT];
+        String[][] questions = new String[Engine.ROUND_COUNT][2];
         char[] operators = new char[] {'+', '-', '*'};
 
-        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
+        for (String[] question : questions) {
             int operand1 = Utils.generateNumber(OPERAND_BOUND);
             int operand2 = Utils.generateNumber(OPERAND_BOUND);
             char operator = operators[Utils.generateNumber(OPERATOR_BOUND)];
 
-            questions[i] = calcQuestion(operator, operand1, operand2);
-            answers[i] = calcAnswer(operator, operand1, operand2);
+            question[0] = calcQuestion(operator, operand1, operand2);
+            question[1] = calcAnswer(operator, operand1, operand2);
         }
-        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+        Engine.runGame(questions, DESCRIPTION);
     }
 
     private static String calcQuestion(char operator, int operand1, int operand2) {

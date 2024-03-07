@@ -9,16 +9,15 @@ public final class PrimeGame {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
-        String[] questions = new String[Engine.ROUND_COUNT];
-        String[] answers = new String[Engine.ROUND_COUNT];
+        String[][] questions = new String[Engine.ROUND_COUNT][2];
 
-        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
+        for (String[] question : questions) {
             int number = Utils.generateNumber(NUMBER_BOUND) + 1;
-            questions[i] = Integer.valueOf(number).toString();
-            answers[i] = isPrime(number) ? "yes" : "no";
+            question[0] = Integer.valueOf(number).toString();
+            question[1] = isPrime(number) ? "yes" : "no";
         }
 
-        Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
+        Engine.runGame(questions, DESCRIPTION);
     }
 
     private static boolean isPrime(int number) {

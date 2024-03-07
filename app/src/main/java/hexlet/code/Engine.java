@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUND_COUNT = 3;
     public static void runGame(String[][] questions, String description) {
-        int i = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -13,20 +12,22 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(description);
 
-        for (; i < questions[0].length; i++) {
-            System.out.println("Question: " + questions[0][i]);
+        int correctAnswers = 0;
+        for (String[] question : questions) {
+            System.out.println("Question: " + question[0]);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
-            if (userAnswer.equals(questions[1][i])) {
+            if (userAnswer.equals(question[1])) {
                 System.out.println("Correct");
+                correctAnswers++;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                    + questions[1][i] + "'");
+                    + question[1] + "'");
                 break;
             }
         }
 
-        if (i == questions[0].length) {
+        if (correctAnswers == ROUND_COUNT) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
