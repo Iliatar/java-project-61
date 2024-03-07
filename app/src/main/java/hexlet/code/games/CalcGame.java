@@ -12,11 +12,12 @@ public final class CalcGame {
     public static void runGame() {
         String[] questions = new String[Engine.ROUND_COUNT];
         String[] answers = new String[Engine.ROUND_COUNT];
+        char[] operators = new char[] {'+', '-', '*'};
 
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int operand1 = Utils.generateNumber(OPERAND_BOUND);
             int operand2 = Utils.generateNumber(OPERAND_BOUND);
-            int operator = Utils.generateNumber(OPERATOR_BOUND);
+            char operator = operators[Utils.generateNumber(OPERATOR_BOUND)];
 
             questions[i] = calcQuestion(operator, operand1, operand2);
             answers[i] = calcAnswer(operator, operand1, operand2);
@@ -24,17 +25,17 @@ public final class CalcGame {
         Engine.runGame(new String[][]{questions, answers}, DESCRIPTION);
     }
 
-    private static String calcQuestion(int operator, int operand1, int operand2) {
+    private static String calcQuestion(char operator, int operand1, int operand2) {
         String result;
 
         switch (operator) {
-            case 0:
+            case '+':
                 result = operand1 + " + " + operand2;
                 break;
-            case 1:
+            case '-':
                 result = operand1 + " - " + operand2;
                 break;
-            case 2:
+            case '*':
                 result = operand1 + " * " + operand2;
                 break;
             default:
@@ -44,17 +45,17 @@ public final class CalcGame {
         return  result;
     }
 
-    private static String calcAnswer(int operator, int operand1, int operand2) {
+    private static String calcAnswer(char operator, int operand1, int operand2) {
         String result;
 
         switch (operator) {
-            case 0:
+            case '+':
                 result = Integer.valueOf(operand1 + operand2).toString();
                 break;
-            case 1:
+            case '-':
                 result = Integer.valueOf(operand1 - operand2).toString();
                 break;
-            case 2:
+            case '*':
                 result = Integer.valueOf(operand1 * operand2).toString();
                 break;
             default:
